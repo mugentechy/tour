@@ -1,0 +1,1 @@
+Welcome to Diani Konnect, your ultimate gateway to discovering the hidden gems of Diani, Kenya's breathtaking coastal paradise! Are you seeking an unforgettable travel experience that blends pristine beaches, vibrant culture, and unparalleled hospitality? Look no further, because we have you covered!
