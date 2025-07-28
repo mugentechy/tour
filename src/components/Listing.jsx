@@ -8,8 +8,7 @@ import { listings } from "../utils/data";
 function Listing() {
 
 
- const { currentUser } = useSelector((state) => state.currentUser)
- console.log(listings)
+ 
 
   return (
     <>
@@ -31,7 +30,7 @@ function Listing() {
         >
   {listings.map((listing) => (
       <ListingCard
-        currentUser={currentUser}
+       
         key={listing.id}
         data={listing}
       />
