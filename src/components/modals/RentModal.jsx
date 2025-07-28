@@ -38,7 +38,7 @@ function RentModal() {
  const rentModal = useRentModal();
  const [isLoading, setIsLoading] = useState(false);
  const [step, setStep] = useState(STEPS.CATEGORY);
- const { currentUser } = useSelector((state) => state.currentUser)
+
 
 
   const onBack = () => {
@@ -105,7 +105,6 @@ function RentModal() {
       guest_count: 1,
       room_count: 1,
       bathroom_count: 1,
-      user_id:currentUser?.id,
       image_src: '',
       price: 1,
       title: '',
@@ -113,7 +112,6 @@ function RentModal() {
     }
   });
   const setCustomValue = (id, value) => {
-    setValue('user_id', currentUser?.id);
     setValue('amenity', selectedAmenities)
     setValue(id, value, {
       shouldDirty: true,

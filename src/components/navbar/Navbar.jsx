@@ -4,7 +4,7 @@ import UserMenu from "./UserMenu";
 import { useSelector } from 'react-redux';
 
 function Navbar() {
-  const { currentUser } = useSelector((state) => state.currentUser);
+  
 
   return (
     <>
@@ -19,7 +19,7 @@ function Navbar() {
 
               {/* User Menu should align to the right */}
               <div className="ml-auto">
-                <UserMenu currentUser={currentUser} />
+                <UserMenu  />
               </div>
             </div>
           </Container>

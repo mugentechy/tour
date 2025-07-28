@@ -6,35 +6,15 @@ import { FaLocationDot } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { SiMinutemailer } from "react-icons/si";
-import { getSubscribeAsync } from '../features/user/userActions'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from "react-hot-toast";
 
 function Footer() {
 
-  const dispatch = useDispatch()
 
-  const [email, setEmail] = useState("");
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
 
-    if (!email) {
-      toast.error("Please enter a valid email address");
-      return;
-    }
-
-    const auth = await dispatch(getSubscribeAsync({ email }));
-    const error = auth?.error?.message;
-
-    if (!error) {
-      toast.success("Thank you for subscribing");
-      setEmail(""); // Clear input after successful submission
-    } else {
-      toast.error(error);
-    }
-  };
 
 
   return (
@@ -130,11 +110,11 @@ function Footer() {
     <div>
       <h3 className="text-2xl font-semibold mb-4">Newsletter</h3>
       <p className="mb-4">Keep in touch with the latest updates</p>
-       <form onSubmit={onSubmit} className="flex items-center">
+       <form  className="flex items-center">
               <input
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+               
+               
                 placeholder="Email"
                 className="p-3 text-black rounded-l-md flex-1 border border-gray-300"
                 aria-label="Email"

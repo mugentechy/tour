@@ -1,7 +1,7 @@
 import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar";
-import useLoginModal from "../../hooks/useLoginModal";
-import useRegisterModal from "../../hooks/useRegisterModal";
+
+
 import { useCallback, useState } from "react";
 import useRentModal from "../../hooks/useRentModal";
 import MenuItem from "./MenuItem";
@@ -10,8 +10,8 @@ import useSearchModal from "../../hooks/useSearchModal";
 
 function UserMenu({ currentUser }) {
   const navigate = useNavigate(); // Initialize useNavigate
-  const loginModal = useLoginModal();
-  const registerModal = useRegisterModal();
+
+ 
   const rentModal = useRentModal();
 
   const [isOpen, setIsOpen] = useState(false);

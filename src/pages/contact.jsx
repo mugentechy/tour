@@ -16,7 +16,7 @@ import { toast } from "react-hot-toast";
 import { BiLogoFacebook } from "react-icons/bi";
 import { BiLogoInstagram } from "react-icons/bi";
 import { BiLogoTiktok } from "react-icons/bi";
-import { contactAsync } from '../features/user/userActions'
+
 import { useForm } from 'react-hook-form'
 
 
@@ -28,21 +28,6 @@ function ContactPage() {
   const hasAnimated = useRef(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
-
-
-  const addContact = async (data) => {
-   
-    try {
-      await dispatch(contactAsync(data));
-      console.log("Form submitted successfully:", data);
-      toast.success("Your request has been submitted successfully!");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast.error("There was an error submitting your request. Please try again.");
-    } 
-  };
 
   return (
     <>
@@ -60,7 +45,7 @@ function ContactPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-  <form onSubmit={handleSubmit(addContact)}>
+  <form >
           {/* First Row */}
           <div className="flex flex-wrap gap-4">
             <div className="flex-1 mb-4 min-w-[200px]">
@@ -71,7 +56,7 @@ function ContactPage() {
                 placeholder="First Name"
                 className="p-3 text-black rounded-l-md flex-1 border border-gray-300"
                 
-              {...register("fname", { required: "First name is required" })}
+             
               />
             
             </div>
@@ -82,7 +67,7 @@ function ContactPage() {
                 type="text"
                 placeholder="Last Name"
                 className="p-3 text-black rounded-l-md flex-1 border border-gray-300"
-              {...register("lname", { required: "Last name is required" })}
+              
               />
              
             </div>
@@ -97,14 +82,7 @@ function ContactPage() {
                 type="email"
                 placeholder="Email"
                 className="p-3 text-black rounded-l-md flex-1 border border-gray-300"
-               
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: "Invalid email address",
-                  },
-                })}
+            
               />
            
             </div>
@@ -115,7 +93,7 @@ function ContactPage() {
                 placeholder="Phone Number"
                 type="text"
                 className="p-3 text-black rounded-l-md flex-1 border border-gray-300"
-                {...register("phone", { required: "Phone number is required" })}
+                
               />
              
             </div>
@@ -128,7 +106,7 @@ function ContactPage() {
                 id="message"
                 placeholder="Enter your message"
                
-                {...register("message", { required: "Message is required" })}
+   
                 className="w-full p-2 border rounded-md"
                 rows="5"
               />

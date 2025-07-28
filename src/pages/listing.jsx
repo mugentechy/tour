@@ -13,14 +13,13 @@ function ListingPage() {
 
  const listing = listings.find((item) => item.id === parseInt(id, 10));
 
- const { currentUser } = useSelector((state) => state.currentUser)
 
 
   return (
     <>
      <ListingClient
         listing={listing}
-        currentUser={currentUser}
+       
         
       />
     </>

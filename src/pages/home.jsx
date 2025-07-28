@@ -49,7 +49,7 @@ function HomePage() {
   };
 
 
- const { currentUser } = useSelector((state) => state.currentUser)
+
 
   return (
     <>
@@ -134,7 +134,7 @@ function HomePage() {
     .slice(startIndex, startIndex + itemsPerPage)
     .map((listing) => (
       <ListingCard
-        currentUser={currentUser}
+        
         key={listing.id}
         data={listing}
       />

@@ -15,11 +15,10 @@ function ImageModal() {
 
   const imageModal = useImageModal();
  const [isLoading, setIsLoading] = useState(false);
- const { currentUser } = useSelector((state) => state.currentUser)
+
 
  const { listingId } = imageModal;
 
- console.log(listingId)
     const onSubmit = async (data) => {
 
   setIsLoading(true);

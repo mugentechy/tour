@@ -1,5 +1,5 @@
 
-import HeartButton from "../HeartButton";
+
 
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
@@ -59,7 +59,6 @@ function ListingCard({
               {/* Render the button with the dynamic status */}
 
 
-             <HeartButton />
             </div>
             {/* Location at the bottom left */}
             <div className="absolute bottom-3 left-3  p-2 rounded-md shadow-md">
